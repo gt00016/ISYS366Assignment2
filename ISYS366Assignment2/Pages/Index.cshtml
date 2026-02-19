@@ -1,0 +1,87 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row m-3 border border-dark p-3">
+    <a asp-page="/Privacy"
+       asp-route-Person.Name="Noah"
+       asp-route-Person.Age="15"
+       class="text-decoration-underline"> 
+       Happy Birthday Noah!
+       </a>
+</div>
+
+<div class="row m-3 border border-dark p-2">
+    <div class="card-subtitle fw-bold">GET</div>
+    <form method="get" asp-page="/Privacy">
+        
+        <div class="row">
+            <div class="col">
+                <label asp-for="Person.Name" class="form-label">Name</label>
+                <input asp-for="Person.Name" class="form-control" />
+            </div>
+            <div class="col"> 
+                <label asp-for="Person.Age" class="form-label">Age</label>
+                <input asp-for="Person.Age" class="form-control" />
+            </div>
+
+            <div class="col">
+                <button type="submit" class="btn bg-dark-subtle rounded-0">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="row m-3 border border-dark p-3">
+    <div class="card-subtitle fw-bold">CROSSPOST</div>
+    <form method="post" asp-page="/Privacy">
+
+        <div class="row mb-3">
+            <div class="col">
+                <label asp-for="Person.Name" class="form-label">Name</label>
+                <input asp-for="Person.Name" class="form-control" />
+            </div>
+            <div class="col">
+                <label asp-for="Person.Age" class="form-label">Age</label>
+                <input asp-for="Person.Age" class="form-control" />
+            </div>
+
+            <div class="col">
+                <button type="submit" class="btn bg-dark-subtle rounded-0">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="row m-3 border border-dark p-3">
+    <div class="card-subtitle fw-bold">POSTBACK</div>
+    <form method="post">
+
+        <div class="row mb-3">
+            <div class="col">
+                <label asp-for="Person.Name" class="form-label">Name</label>
+                <input asp-for="Person.Name" class="form-control" />
+            </div>
+            <div class="col">
+                <label asp-for="Person.Age" class="form-label">Age</label>
+                <input asp-for="Person.Age" class="form-control" />
+            </div>
+
+            <div class="col">
+                <button type="submit" class="btn bg-dark-subtle rounded-0">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
